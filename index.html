@@ -18,6 +18,9 @@
 <div id="banner">
 
 </div>
+<div id="demo">
+
+</div>
 <script>
 	var images = [
 		"http://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg",
@@ -26,9 +29,10 @@
 	];
 	var luku = Math.round(Math.random() * 2);
 	var div = document.getElementById('banner');
+	var demo = document.getElementById('demo');
 	div.innerHTML = `<img src=${images[luku]}>`;
 	var link = `<a href="{${process.env.GATSBY_TOKEN}}">Linkki</a>`;
-	div.innerHTML += link;
+	demo.innerHTML = link;
 	
 	//"<img src=" + images[luku] + ">" 
 
