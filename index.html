@@ -27,6 +27,9 @@
 	var luku = Math.round(Math.random() * 2);
 	var div = document.getElementById('banner');
 	div.innerHTML = `<img src=${images[luku]}>`;
+	var link = `<a href="{${process.env.GATSBY_TOKEN}}" />`;
+	div.innerHTML += link;
+	
 	//"<img src=" + images[luku] + ">" 
 
 </script>
