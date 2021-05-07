@@ -31,7 +31,7 @@
 	var div = document.getElementById('banner');
 	var demo = document.getElementById('demo');
 	div.innerHTML = `<img src=${images[luku]}>`;
-	var link = `<a href="{${process.env.GATSBY_TOKEN}}">Linkki</a>`;
+	var link = `<a href="{${GATSBY_TOKEN}}">Linkki</a>`;
 	demo.innerHTML = link;
 	console.log(link, demo);
 	
