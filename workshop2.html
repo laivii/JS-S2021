@@ -10,7 +10,51 @@
 			}
 		</style>
 		<script>
-			<!-- JavaScript goes here -->
+			//Exercise 4
+			isStudent();
+
+			function isStudent(){
+				let text = "Are you a student?"
+
+				if(confirm(text) == true){
+					document.write("<h1>Welcome student!</h1>");
+				} else {
+					location.href = "file:///C:/Users/Viivi/Documents/GitHub/JS-S2021/newPlank.html";
+				}
+			}
+
+			//Exercise 1
+			document.write('<strong><i>"If I had nine hours to chop down a tree, I\'d spend the first six sharpening my ax."</strong><br>-- Abraham Lincoln<i><br>');
+			document.write("<br>");
+
+			//Exercise 2
+			repeatingText(); 
+			
+			function repeatingText(){
+				for(var i = 1; i <= 50; i++){
+					document.write("blaablaa");
+				}
+			}
+
+			//Exercize 3
+			var appName = navigator.appVersion
+
+			if (appName.includes("/firefox|fxios/i")) {
+				location.href = "http://mozilla.org";
+			} else {
+				window.open("http://www.microsoft.com", "_blank");
+			}
+
+			//Exercise 5
+			var images =[
+			"http://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg", 
+			"http://farm1.staticflickr.com/33/45336904_1aef569b30_n.jpg", 
+			"http://farm6.staticflickr.com/5211/5384592886_80a512e2c9.jpg"
+			];
+			
+			var mones = Math.round(Math.random() * 2);
+
+			document.write('<br><img src=' + images[mones] + '>');
 		</script>
 </head>
 
