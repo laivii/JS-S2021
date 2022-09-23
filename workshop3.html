@@ -16,13 +16,6 @@ table, tr, td{
 }
 
 </style>
-<script>
-
-<!-- JavaScript goes here -->
-
-
-
-</script>
 
 <h1>Workshop 3: JavaScript Events</h1>
 <hr />
@@ -33,9 +26,11 @@ good idea to save the lines of code you write during the exercises for later use
 <h2>Exercise 1</h2>
 <p>&nbsp;Below you will see three buttons. Edit the source code and add an onClick-events to these buttons.</p>
 <p>
-  <button>Button 1</button>
-  <button>Button 2</button>
-  <button>Button 3</button>
+  <button onclick="alert('You clicked me! ' + thisDate())">Button 1</button>
+  <button onclick="showTable()">Button 2</button>
+  <button onclick="people()">Button 3</button>
+
+  <p></p>
 </p>
 
 <ul>
@@ -158,4 +153,60 @@ The second button should show your location on a Google Maps. You can see the ma
 "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x300&sensor=false" where latlon is your latitude + longitute data separated by 
 comma (,).
 </li>
+
+<script>
+  //Button 1
+  var pvm = new Date();
+  function thisDate(){
+    wholeDate = pvm.getDate() + "." + pvm.getMonth() + "." + pvm.getFullYear();
+    return wholeDate;
+  }
+
+  //Button 2
+  function showTable(){
+    var table = `
+      <table border = "1px">
+        <tr>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Salary</th>
+        </tr>
+        <tr>
+          <td>Tiger Nixon</td>
+          <td>System Architect</td>
+          <td>$320,800</td>
+        </tr>
+        <tr>
+          <td>Garrett Winters</td>
+          <td>Accountant</td>
+          <td>$170,750</td>
+        </tr>
+      </table>
+    `;
+
+    return document.write(table);
+  }
+
+  //Button 3
+  function people(){
+    var persons = ["Nyssa P. Skinner", "593-4241 Lacus, St.","Cape Verde", 
+	       "Camilla F. Strickland","391-2150 Ac Rd.","Andorra",
+	       "Reagan U. Andrews", "P.O. Box 472, 2271 Mauris Ave","Faroe Islands",
+	       "Kelsey D. Clark", "P.O. Box 866, 7793 Aliquet Ave","Bulgaria"
+      ];
+
+    var contactTable = "<table border ='1'><tr><th>Name</th><th>Address</th><th>Country</th></tr><tr>";
+    var perRow = 3;
+
+    for(var tieto = 0; tieto < persons.length; tieto+=3){
+      contactTable += `<tr><td>${persons[tieto]}</td><td>${persons[tieto+1]}</td><td>${persons[tieto+2]}</td></tr>`;
+    }
+
+    contactTable += "</tr></table>";
+
+    return document.write(contactTable);
+  }
+
+
+</script>
 </html>
